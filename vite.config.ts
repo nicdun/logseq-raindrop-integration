@@ -1,10 +1,13 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import viteTsconfigPaths from 'vite-tsconfig-paths';
-import svgrPlugin from 'vite-plugin-svgr';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import logseqPlugin from "vite-plugin-logseq";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), viteTsconfigPaths(), svgrPlugin(), logseqPlugin()],
+  plugins: [react(), logseqPlugin()],
+  // Makes HMR available for development
+  build: {
+    target: "esnext",
+    minify: "esbuild",
+  },
 });
