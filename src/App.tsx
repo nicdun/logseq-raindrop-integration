@@ -55,7 +55,7 @@ export function App() {
 
   if (isVisible) {
     return (
-      <div className="absolute top-12 right-4 p-2 w-full max-w-sm max-h-[80%] bg-white rounded-lg border shadow-md sm:p-4">
+      <div className="absolute top-12 right-4 p-2 w-full max-w-[420px] max-h-[80%] h-full bg-white rounded-lg border shadow-md sm:p-4">
         <main
           className="h-[10px]"
           onClick={(e) => {
@@ -69,7 +69,11 @@ export function App() {
             <img className="w-[40px] pr-2" src={logo} alt="Raindrop logo" />
             <h3 className="font-bold">Raindrop Integration</h3>
           </div>
-          {setupComplete() ? <RaindropDashboard/> : <SetupIncompleteDashboard />}
+          {setupComplete() ? (
+            <RaindropDashboard />
+          ) : (
+            <SetupIncompleteDashboard />
+          )}
         </div>
       </div>
     );
