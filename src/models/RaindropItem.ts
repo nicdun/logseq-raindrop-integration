@@ -8,7 +8,7 @@ export type RaindropItem = {
   created: Date;
   domain: string;
   cover: string | URL;
-  url: URL;
+  url: string;
   collectionName?: string;
   id: string;
 };

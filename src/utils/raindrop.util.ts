@@ -6,7 +6,7 @@ export const mapToRaindropItem = (item: RaindropResponse): RaindropItem => {
     id: item._id.toString(),
     title: item.title,
     description: item.excerpt,
-    url: new URL(item.link),
+    url: item.link,
     domain: item.domain,
     cover: item.cover,
     created: new Date(item.created),

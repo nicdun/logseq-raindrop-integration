@@ -9,10 +9,10 @@ export const getSingleRaindrop = async (
   id: RaindropItem["id"]
 ): Promise<RaindropItem | undefined> => {
   try {
-    return await fetch(`${RAINDROP_API}/raindrop/ + ${id}`, {
+    return await fetch(`${RAINDROP_API}/raindrop/${id}`, {
       method: "GET",
       headers: new Headers({
-        Authorization: `Bearer ${settings.access_token()}`,
+        Authorization: `Bearer ${settings.accessToken()}`,
         "Content-Type": "application/json",
       }),
     })
@@ -38,7 +38,7 @@ export const searchRaindrop = async (value: string): Promise<RaindropItem[]> => 
     {
       method: "GET",
       headers: new Headers({
-        Authorization: `Bearer ${settings.access_token()}`,
+        Authorization: `Bearer ${settings.accessToken()}`,
         "Content-Type": "application/json",
       }),
     }
